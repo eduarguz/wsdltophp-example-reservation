@@ -1541,7 +1541,7 @@ class AncillaryServicesUpdate_PNRB extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must be inferior or equal to 24, "%s" given', $segmentNumber), __LINE__);
         }
         // validation for constraint: minInclusive
-        if ($segmentNumber < 1) {
+        if (!is_null($segmentNumber) && $segmentNumber < 1) {
             throw new \InvalidArgumentException(sprintf('Invalid value, the value must be superior or equal to 1, "%s" given', $segmentNumber), __LINE__);
         }
         // validation for constraint: string
